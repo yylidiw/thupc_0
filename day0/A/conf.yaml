@@ -17,5 +17,7 @@ time limit: 1.0
 title:
   zh-cn: 测测你的区间加区间
 type: program
-users: {}
+users: 
+  zyb:
+    std: {expected: == 100, path: zyb/a.cpp}
 version: 2
