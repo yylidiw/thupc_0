@@ -32,7 +32,7 @@ int main()
     
     // for (int i = 1; i <= n; ++i) printf("pd_cnt[%d] = %lld\n", i, pd_cnt[i]);
 
-    int lastans = 0;
+    ll lastans = 0;
     vector<int> triggered;
     for (int i = 1; i <= m; ++i)
     {
