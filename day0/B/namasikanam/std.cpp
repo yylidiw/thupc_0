@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-const int M = 1e5 + 5, S = M * 17;
+const int M = 1e5 + 5, S = M * 18 * 4;
 
 int stot = 1;
 int root[M];
@@ -26,9 +26,9 @@ void add(int &node, int old_node, int l, int r, int L, int R, int x)
     }
 }
 
-int query(int node, int l, int r, int i)
+ll query(int node, int l, int r, int i)
 {
-    int ans = segt[node];
+    ll ans = segt[node];
     if (i <= l + r >> 1)
     {
         if (ls[node])
