@@ -140,6 +140,7 @@ int main()
                 }
             }
             lastans = triggered.size();
+            sort(triggered.begin(), triggered.end());
             printf("%lld", lastans);
             for (int monitor_id : triggered)
                 printf(" %d", monitor_id);
