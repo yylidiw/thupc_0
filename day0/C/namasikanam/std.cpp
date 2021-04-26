@@ -86,7 +86,8 @@ void add(int monitor_id)
             .alarm = alarm + accumulated[p],
             .monitor_id = monitor_id,
             .dvs_id = dvs_id});
-        monitors[monitor_id].heap_pos.push_back(up(heaps[p], heaps[p].size() - 1));
+        monitors[monitor_id].heap_pos.push_back(heaps[p].size() - 1);
+        up(heaps[p], heaps[p].size() - 1);
     }
 }
 
