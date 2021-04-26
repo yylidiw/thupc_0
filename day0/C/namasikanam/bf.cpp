@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 
@@ -9,7 +9,7 @@ struct Monitor
     int id;
     int x;
     ll y;
-}monitor[N];
+} monitor[N];
 int monitor_id;
 
 bool is_prm[N];
@@ -29,7 +29,7 @@ int main()
         if (is_prm[i])
             for (int j = i; j <= n; j += i)
                 ++pd_cnt[j];
-    
+
     // for (int i = 1; i <= n; ++i) printf("pd_cnt[%d] = %lld\n", i, pd_cnt[i]);
 
     ll lastans = 0;
@@ -56,8 +56,10 @@ int main()
                         triggered.push_back(monitor[j].id);
                     }
                 }
+            sort(triggered.begin(), triggered.end());
             printf("%u", (unsigned)triggered.size());
-            for (int id: triggered) printf(" %d", id);
+            for (int id : triggered)
+                printf(" %d", id);
             puts("");
             lastans = triggered.size();
             triggered.clear();
@@ -67,8 +69,7 @@ int main()
             monitor[i] = Monitor{
                 .id = ++monitor_id,
                 .x = x,
-                .y = y
-            };
+                .y = y};
             if (y == 0)
                 triggered.push_back(monitor[i].id);
         }
