@@ -21,4 +21,6 @@ users:
   namasikanam:
     std: { expected: == 100, path: namasikanam/std.cpp }
     bf: { expected: == 0, path: namasikanam/bf.cpp }
+  yyl:
+    yyl: { expected: == 100, path: yyl/yyl.cpp }
 version: 2
