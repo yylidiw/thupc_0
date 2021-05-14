@@ -21,4 +21,6 @@ users:
   namasikanam:
     std: { expected: == 100, path: namasikanam/std.cpp }
     bf: { expected: == 0, path: namasikanam/bf.cpp }
+  czr:
+    sol_pq: { expected: == 0, path: czr/sol_pq.cpp }
 version: 2
