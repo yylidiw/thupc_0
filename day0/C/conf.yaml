@@ -18,9 +18,12 @@ title:
   zh-cn: 鬼街
 type: program
 users:
-  namasikanam:
+ namasikanam:
     std: { expected: == 100, path: namasikanam/std.cpp }
     bf: { expected: == 0, path: namasikanam/bf.cpp }
   czr:
+    wa_1: { expected: == 0, path: czr/wa_1.cpp }
+    wa_2: { expected: == 0, path: czr/wa_2.cpp }
     sol_pq: { expected: == 0, path: czr/sol_pq.cpp }
+    sol_set: { expected: == 0, path: czr/sol_set.cpp }
 version: 2
