@@ -1,5 +1,6 @@
 args:
-  n: 1000
+  n: 100000
+  m: 500000
 compile:
   c: -O2 -std=c11
   cpp: -O2 -std=c++14
@@ -13,7 +14,7 @@ name: A
 partial score: false
 pre: []
 samples: []
-time limit: 1.0
+time limit: 2.0
 title:
   zh-cn: 测测你的区间加区间
 type: program
