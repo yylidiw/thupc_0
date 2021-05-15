@@ -26,4 +26,5 @@ users:
     wa_2: { expected: == 0, path: czr/wa_2.cpp }
     sol_pq: { expected: == 0, path: czr/sol_pq.cpp }
     sol_set: { expected: == 0, path: czr/sol_set.cpp }
+    sol: {expected: == 0, path: czr/sol.cpp }
 version: 2
