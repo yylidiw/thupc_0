@@ -23,7 +23,7 @@ inline void print(li x){
 	if(x < 0) pc('-'),x = -x;
 	prt(x);
 }
-int n,m,a[100010],sz,sz1,sz2,tta;
+int n,m,a[100010],sz,sz1,sz2;
 li ans[500010];
 struct qry{
 	int l,r,id;
@@ -31,19 +31,12 @@ struct qry{
 inline bool operator < (qry q,qry w){
 	return q.l / sz == w.l / sz ? ((q.l / sz & 1) ? q.r > w.r : q.r < w.r) : q.l < w.l;
 }
-struct lsh{
-	int a,id;
-}aa[100010];
-inline bool operator < (lsh x,lsh y){
-	return x.a < y.a;
-}
 struct caoz{
 	int l,r,fg,id;
 	inline caoz(int _l,int _r,int _fg,int _id){
 		l = _l;r = _r;fg = _fg;id = _id;
 	}
 };
-
 vector<caoz> cz[100010];
 int ton[100010],pm[100010],nxt[100010],pre[100010],wz[100010],lst[100010];
 #define clr(x) memset((x),0,sizeof(x))
@@ -95,14 +88,7 @@ void wk(){
 int main(){
 	int i,j;
 	n = read();
-	for(i = 1;i <= n;++i) aa[i].a = read(),aa[i].id = i;
-	sort(aa + 1,aa + n + 1);
-	aa[0].a = aa[1].a - 1;
-	tta = 0;
-	for(i = 1;i <= n;++i){
-		if(aa[i].a != aa[i - 1].a) ++tta;
-		a[aa[i].id] = tta;
-	}
+	for(i = 1;i <= n;++i) a[i] = read();
 	m = read();
 	for(i = 1;i <= m;++i){
 		p[i].l = read();p[i].r = read();p[i].id = i;
@@ -121,10 +107,10 @@ int main(){
 		if(nr > ar) nr = ar;
 		if(nl < al) cz[nr].pb(caoz(nl,al - 1,-1,ai)),nl = al;
 	}
-	for(i = 1;i <= n;++i) a[i] = tta - a[i] + 1;
+	for(i = 1;i <= n;++i) a[i] = n - a[i] + 1;
 	wk(); 
 	for(i = 1,j = n;i < j;++i,--j) swap(a[i],a[j]);
-	for(i = 1;i <= n;++i) a[i] = tta - a[i] + 1;
+	for(i = 1;i <= n;++i) a[i] = n - a[i] + 1;
 	for(i = 1;i <= n;++i) cz[i].clear();
 	nl = 1;nr = 0;
 	for(i = 1;i <= m;++i){
