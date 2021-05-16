@@ -6,21 +6,24 @@ compile:
   py: ""
 data:
   - cases: [1, 2, 3, 4, 5, 6, 7]
+  # - cases: [7]
     score: 100
 folder: problem
 memory limit: 512 MiB
+# memory limit: 2048 MiB
 name: street
 partial score: false
 samples:
   - cases: [1]
-time limit: 10.0
+time limit: 50.0
 title:
   zh-cn: 鬼街
 type: program
 users:
- namasikanam:
+  namasikanam:
     std: { expected: == 100, path: namasikanam/std.cpp }
     bf: { expected: == 0, path: namasikanam/bf.cpp }
+    bf_list: { expected: == 0, path: namasikanam/bf_list.cpp }
   czr:
     wa_1: { expected: == 0, path: czr/wa_1.cpp }
     wa_2: { expected: == 0, path: czr/wa_2.cpp }
