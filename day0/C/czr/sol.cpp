@@ -18,7 +18,7 @@ ll y,rec[7],lst[7];
 }m[N+5];
 pair<ll,int> val[6*N+5];
 int lc[6*N+5],rc[6*N+5],fa[6*N+5],dis[6*N+5],rt[P+5],cot;
-int que[25];
+int que[50];
 inline bool cmp(pi a,pi b)
 {return ((a.fi==b.fi) ? (a.se>b.se):(a.fi>b.fi));} 
 inline int merge(int x,int y)
