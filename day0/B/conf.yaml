@@ -13,7 +13,7 @@ name: kuaishou
 partial score: false
 samples:
   - cases: [1]
-time limit: 3.0
+time limit: 1.0
 title:
   zh-cn: 视频倍增期
 type: program
