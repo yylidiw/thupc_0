@@ -17,7 +17,6 @@ inline int add_edge(int u,int v) { return e[++etop].to=v,e[etop].pre=h[u],h[u]=e
 int dfs(int x) { for(int i=h[x],l;i;i=e[i].pre) (ok[l=e[i].to]?ans+=b.ask(-s[l-1]):0),b.upd(T[l],1),dfs(l),b.upd(T[l],-1);return 0; }
 int main()
 {
-	freopen("data.in","r",stdin);
 	scanf("%s",S+1);int n=(int)strlen(S+1);assert(n>=1&&n<=10000000);
 	rep(i,1,n) assert(S[i]=='('||S[i]==')');
 	rep(i,1,n) if(S[i]=='(') a[i]=1;else a[i]=-1;
