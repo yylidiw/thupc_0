@@ -8,7 +8,7 @@ using namespace std;
 const int N=10000010;int st,Ans,n,cnt[N<<1],nxt[N<<1];char S[N];lint ans=0;
 struct edges{ int to,pre; }e[N<<1];int h[N],etop,a[N],s[N],T[N],ok[N];
 inline int add_edge(int u,int v) { return e[++etop].to=v,e[etop].pre=h[u],h[u]=etop; }
-/*int dfs(int x)
+int dfs(int x)
 {
 	for(int i=h[x],l;i;i=e[i].pre)
 	{
@@ -24,41 +24,10 @@ inline int add_edge(int u,int v) { return e[++etop].to=v,e[etop].pre=h[u],h[u]=e
 		cnt[n+T[l]]--;if(T[l]>=st) Ans--;
 	}
 	return 0;
-}*/
-int xs[N],cur[N];
-int dfs(int S)
-{
-	int c=1;xs[1]=S;
-	rep(i,1,S) cur[i]=h[i];
-	while(c)
-	{
-		int x=xs[c],&i=cur[x];
-		if(!i)
-		{
-			if(x!=S)
-			{
-				cnt[n+T[x]]--;
-				if(T[x]>=st) Ans--;
-			}
-			c--;
-			continue;
-		}
-		int l=e[i].to;i=e[i].pre;
-		xs[++c]=l,cur[l]=h[l];
-		if(ok[l])
-		{
-			int q=-s[l-1];
-			while(st<q) Ans-=cnt[n+(st++)];
-			while(st>q) Ans+=cnt[n+(--st)];
-			ans+=Ans;
-		}
-		cnt[n+T[l]]++;if(T[l]>=st) Ans++;
-	}
-	return 0;
 }
 int main()
 {
-//	freopen("data.in","r",stdin);
+	freopen("data.in","r",stdin);
 	scanf("%s",S+1),n=(int)strlen(S+1);
 //	n=10000000;rep(i,1,n) if(i&1) S[i]='(';else S[i]=')';
 	assert(n>=1&&n<=10000000);
