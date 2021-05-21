@@ -14,6 +14,9 @@ namespace Generator {
 	mt19937 randgen(rd());
 	FILE *log;
 	void output(int index, int isdown = 0) {
+		int i, sum;
+		for (i = 1, sum = 0; s[i]; ++i) sum += (s[i] == '(' ? 1 : -1);
+		assert(sum == 0);
 		if (isdown) sprintf(prefix, "../down/%d", index);
 		else sprintf(prefix, "%d", index);
 		fprintf(log, "Output to %s.in:\n", prefix);
@@ -118,7 +121,10 @@ namespace Generator {
 		}
 		else {
 			for (i = 1; i <= out_slope; ++i) s[++lbd] = ')';
-			for (i = -1; i >= plain; --i) s[++lbd] = s[--rbd] = ')';
+			for (i = -1; i >= plain; --i) {
+				s[++lbd] = ')';
+				s[--rbd] = '(';
+			}
 			assert(lbd < rbd);
 		}
 		fillup(lbd + 1, rbd, hills_lim);
@@ -127,9 +133,9 @@ namespace Generator {
 	}
 	void main() {
 		int caseid;
-		log = fopen("gen.log", "w");
-		fprintf(log, "Generating test data:");
-		for (caseid = 1; caseid <= 36; ++caseid) {
+		log = fopen("gen.log", "a");
+		fprintf(log, "Generating test data:\n");
+		for (caseid = 31; caseid <= 34; ++caseid) {
 			fprintf(log, "Generating testcase #%d:\n", caseid);
 			switch (caseid) {
 				case 1:
@@ -192,6 +198,9 @@ namespace Generator {
 			}
 			output(caseid);
 		}
+		fprintf(log, "Test data 31 - 34 re-generated.\n");
+		fclose(log);
+		return ;
 		fprintf(log, "Test data done.\nGenerating down:\n");
 		for (caseid = 1; caseid <= 3; ++caseid) {
 			fprintf(log, "Generating down case #%d:\n", caseid);
