@@ -9,7 +9,7 @@ data:
     score: 100
 folder: problem
 memory limit: 256 MiB
-name: kuaishou
+name: B
 partial score: false
 samples:
   - cases: [1]
