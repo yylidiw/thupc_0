@@ -21,4 +21,6 @@ type: program
 users:
   AnalogueHeart:
     std: {expected: == 100, path: AnalogueHeart/fla.cpp}
+  zyb:
+    nlogn: {expected: == 100, path: zyb/nlogn.cpp}
 version: 2
