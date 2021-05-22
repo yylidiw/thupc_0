@@ -16,7 +16,7 @@ pre: []
 samples: []
 time limit: 4.0
 title:
-  zh-cn: 测测你的区间加区间
+  zh-cn: 区间本质不同逆序对
 type: program
 users: 
   zyb:

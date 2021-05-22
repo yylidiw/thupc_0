@@ -4,7 +4,7 @@
 
 给定一个长为 $n$ 的序列 $a$。
 
-有 $m$ 次询问，每次询问给定一个区间 $[l,r]$，求 $|{(a_i,a_j)：l\le i<j\le r \wedge a_i>a_j}|$。
+有 $m$ 次询问，每次询问给定一个区间 $[l,r]$，求 $|{(a_i,a_j) : l\le i<j\le r \wedge a_i>a_j}|$。
 
 $1\le n\le 10^5$，$1\le m\le 5\times 10^5$。
 
